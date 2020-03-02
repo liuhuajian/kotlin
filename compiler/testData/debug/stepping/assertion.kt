@@ -29,17 +29,17 @@ fun box(): String {
 }
 
 // LINENUMBERS
-// TestKt.box():23
-// TestKt.box():14
-// TestKt.box():15
-// TestKt.getMASSERTIONS_ENABLED():2
-// TestKt.box():15
-// TestKt.box():16
-// TestKt.box():20
-// TestKt.box():24
-// TestKt.box():5
-// TestKt.getMASSERTIONS_ENABLED():2
-// TestKt.box():5
-// TestKt.box():6
-// TestKt.box():11
-// TestKt.box():28
+// test.kt:23
+// test.kt:14
+// test.kt:15
+// test.kt:2
+// test.kt:15
+// test.kt:16
+// test.kt:20
+// test.kt:24
+// test.kt:5
+// test.kt:2
+// test.kt:5
+// test.kt:6
+// test.kt:11
+// test.kt:28

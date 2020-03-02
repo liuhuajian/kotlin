@@ -188,7 +188,7 @@ class IrInlineCodegen(
                 false,
                 codegen.typeMapper.typeSystem,
                 registerLineNumberAfterwards = false,
-                isSyntheticCall = expression.startOffset == UNDEFINED_OFFSET
+                isSyntheticCall = codegen.irFunction.origin == IrDeclarationOrigin.FUNCTION_FOR_DEFAULT_PARAMETER
             )
         } finally {
             state.globalInlineContext.exitFromInliningOf(inlineCall)
