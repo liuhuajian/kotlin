@@ -7,6 +7,7 @@ package test.exceptions
 
 import kotlin.test.*
 import test.collections.assertArrayNotSameButEquals
+import test.testOnJvm7AndAbove
 
 import java.io.PrintWriter
 import java.io.*
@@ -78,5 +79,17 @@ class ExceptionJVMTest {
         val e2 = Exception("Suppressed")
 
         e1.addSuppressed(e2)
+    }
+
+    @Test fun circularCauseStackTrace() {
+        val e1 = Exception("cause")
+        val e2 = Error("induced", e1)
+        e1.initCause(e2)
+        assertSame(e1, e2.cause)
+        assertSame(e2, e1.cause)
+        testOnJvm7AndAbove {
+            val trace = e2.toStringWithTrace()
+            assertTrue("CIRCULAR REFERENCE" in trace, trace)
+        }
     }
 }
