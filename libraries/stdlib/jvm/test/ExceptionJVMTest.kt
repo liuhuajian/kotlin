@@ -17,11 +17,13 @@ class ExceptionJVMTest {
     @Test fun printStackTraceOnRuntimeException() {
         assertPrintStackTrace(RuntimeException("Crikey!"))
         assertPrintStackTraceStream(RuntimeException("Crikey2"))
+        assertToStringWithTrace(RuntimeException("ToString"))
     }
 
     @Test fun printStackTraceOnError() {
         assertPrintStackTrace(Error("Oh dear"))
         assertPrintStackTraceStream(Error("Oh dear2"))
+        assertToStringWithTrace(Error("ToString"))
     }
 
 
@@ -46,6 +48,11 @@ class ExceptionJVMTest {
 
         val bytes = assertNotNull(byteBuffer.toByteArray())
         val content = bytes.toString(Charset.defaultCharset())
+        comparePrintedThrowableResult(t, content)
+    }
+
+    fun assertToStringWithTrace(t: Throwable) {
+        val content = t.toStringWithTrace()
         comparePrintedThrowableResult(t, content)
     }
 
