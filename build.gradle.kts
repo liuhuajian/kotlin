@@ -260,7 +260,8 @@ extra["compilerModules"] = arrayOf(
     ":compiler:fir:lightTree",
     ":compiler:fir:fir2ir",
     ":compiler:fir:java",
-    ":compiler:fir:jvm"
+    ":compiler:fir:jvm",
+    ":compiler:fir:analysis-tests"
 )
 
 val coreLibProjects = listOfNotNull(
@@ -552,7 +553,7 @@ tasks {
 
     register("firCompilerTest") {
         dependsOn(":compiler:fir:psi2fir:test")
-        dependsOn(":compiler:fir:resolve:test")
+        dependsOn(":compiler:fir:analysis-tests:test")
         dependsOn(":compiler:fir:fir2ir:test")
         dependsOn(":compiler:fir:lightTree:test")
     }
@@ -561,7 +562,7 @@ tasks {
         dependsOn(
             ":compiler:fir:psi2fir:test",
             ":compiler:fir:lightTree:test",
-            ":compiler:fir:resolve:test",
+            ":compiler:fir:analysis-tests:test",
             ":compiler:fir:fir2ir:test",
             ":idea:idea-fir:test"
         )
