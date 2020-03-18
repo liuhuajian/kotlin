@@ -261,6 +261,7 @@ extra["compilerModules"] = arrayOf(
     ":compiler:fir:fir2ir",
     ":compiler:fir:java",
     ":compiler:fir:jvm",
+    ":compiler:fir:checkers",
     ":compiler:fir:analysis-tests"
 )
 
