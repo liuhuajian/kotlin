@@ -7222,6 +7222,11 @@ public class IrBlackBoxCodegenTestGenerated extends AbstractIrBlackBoxCodegenTes
                 public void testSimple_1_3() throws Exception {
                     runTestWithPackageReplacement("compiler/testData/codegen/box/coroutines/localFunctions/anonymous/simple.kt", "kotlin.coroutines");
                 }
+
+                @TestMetadata("suspendLambdaWithArgumentRearrangement.kt")
+                public void testSuspendLambdaWithArgumentRearrangement_1_3() throws Exception {
+                    runTestWithPackageReplacement("compiler/testData/codegen/box/coroutines/localFunctions/anonymous/suspendLambdaWithArgumentRearrangement.kt", "kotlin.coroutines");
+                }
             }
 
             @TestMetadata("compiler/testData/codegen/box/coroutines/localFunctions/named")
